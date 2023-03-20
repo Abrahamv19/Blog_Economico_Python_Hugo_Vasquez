@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from BlogEconomico.views import (index, BlogList, BlogDetail, BlogUpdate, BlogDelete, BlogCreate,
-                                 BlogSearch, Login, SignUp, Logout
+                                 BlogSearch, Login, SignUp, Logout, BlogMineList
                                  )
 
 from django.conf import settings
@@ -34,6 +34,7 @@ urlpatterns = [
     path('login/', Login.as_view(), name="login"),
     path('signup/', SignUp.as_view(), name="signup"),
     path('logout/', Logout.as_view(), name="logout"),
+    path('blog/list/mine', BlogMineList.as_view(), name="blog-mine"),
 
 ]
 

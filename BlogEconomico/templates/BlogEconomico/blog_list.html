@@ -9,7 +9,7 @@
     <li>
         {{blog.id}} - {{blog.title}} - {{blog.subtitle}} - Autor: {{blog.publisher}}
         <a class="btn btn-success" href="{% url 'blog-detail' blog.id %}">Detalle</a>
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and user.id == blog.publisher.id %}
             <a class="btn btn-primary" href="{% url 'blog-update' blog.id %}">Actualizar</a>
             <a class="btn btn-danger" href="{% url 'blog-delete' blog.id %}">Borrar</a>
         {% endif %}

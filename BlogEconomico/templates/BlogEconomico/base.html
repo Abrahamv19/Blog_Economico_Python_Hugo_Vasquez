@@ -58,11 +58,14 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">INICIO</a>
+            <a class="nav-link" aria-current="page" href="{% url 'index' %}">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog-list' %}">PUBLICACIONES</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog-list' %}">MIS PUBLICACIONES</a>
+            <a class="nav-link" href="{% url 'blog-mine' %}">MIS PUBLICACIONES</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'blog-create' %}">NUEVA PUBLICACIÓN</a>

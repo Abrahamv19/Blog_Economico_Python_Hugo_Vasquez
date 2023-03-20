@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import (ListView, DetailView, CreateView, UpdateView, DeleteView)
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 def index(request):
@@ -15,16 +15,29 @@ class BlogList(ListView):
     model = Blog
     context_object_name = "blogs"
 
+class BlogMineList(LoginRequiredMixin, BlogList):
+
+    def get_queryset(self):
+        return Blog.objects.filter(publisher=self.request.user.id).all()
+
+
 class BlogDetail(DetailView):
     model = Blog
     context_object_name = "blog"
 
-class BlogUpdate(LoginRequiredMixin, UpdateView):
+class OwnerPermissions(UserPassesTestMixin):
+
+    def test_func(self):
+        user_id = self.request.user.id
+        blog_id = self.kwargs.get("pk")
+        return Blog.objects.filter(publisher=user_id, id=blog_id).exists()
+
+class BlogUpdate(LoginRequiredMixin, OwnerPermissions, UpdateView):
     model = Blog
     success_url = reverse_lazy("blog-list")
     fields = '__all__'
 
-class BlogDelete(LoginRequiredMixin, DeleteView):
+class BlogDelete(LoginRequiredMixin, OwnerPermissions, DeleteView):
     model = Blog
     context_object_name = "blog"
     success_url = reverse_lazy("blog-list")
