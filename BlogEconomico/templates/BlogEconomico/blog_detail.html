@@ -5,9 +5,17 @@
 <ul>
     <br>
     <li>
-        <h6>Id de publicacion: {{blog.id}}</h6> <br> <h4>{{blog.title}}</h4> <br> <h5>{{blog.subtitle}}</h5> <br> <p>{{blog.description}}</p> <br> <h6>{{blog.date}}</h6> <br> <h6>Autor: {{blog.publisher}}</h6>
+        <div class="col col-12" style="text-align: center;">
+        <h6>Id de publicacion: {{blog.id}}</h6> <br> <h4>{{blog.title}}</h4> <br> <h5>{{blog.subtitle}}</h5> <br> <img height="256px" src="{{blog.image_url}}">   <br> <br> <p class="lead" style="text-align: left;">{{blog.description}}</p> <br> <h6>{{blog.date}}</h6> <br> <h6>Autor: {{blog.publisher}}</h6>
         <a class="btn btn-primary"href="">Actualizar</a>
         <a class="btn btn-danger"href="">Borrar</a>
+       </div>
     </li>
 </ul>
 {% endblock %}
+
+
+
+
+
+

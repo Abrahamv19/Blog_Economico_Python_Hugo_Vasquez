@@ -51,7 +51,7 @@ class BlogSearch(ListView):
     model = Blog
     context_object_name = "blogs"
 
-    def getqueryset(self):
+    def get_queryset(self):
         criterio = self.request.GET.get("criterio")
         result = Blog.objects.filter(title__icontains=criterio).all()
         return result
