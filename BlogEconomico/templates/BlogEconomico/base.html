@@ -61,7 +61,13 @@
             <a class="nav-link" aria-current="page" href="{% url 'index' %}">INICIO</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'nosotros' %}">NOSOTROS</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'blog-list' %}">PUBLICACIONES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'mensaje-create' %}">ENVIAR MENSAJE</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
@@ -69,6 +75,18 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'blog-create' %}">NUEVA PUBLICACIÓN</a>
+          </li>
+          {% if user.profile %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile-update' user.profile.id %}">ACTUALIZAR AVATAR</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile-create' %}">CREAR AVATAR</a>
+            </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'mensaje-list' %}">MENSAJES</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">{{ user.username }} | SALIR</a>
@@ -90,6 +108,7 @@
     </div>
   </nav>
 </header>
+
 
 {% block main %}
 {% endblock %}

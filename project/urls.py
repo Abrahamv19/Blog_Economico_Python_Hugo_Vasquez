@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from BlogEconomico.views import (index, BlogList, BlogDetail, BlogUpdate, BlogDelete, BlogCreate,
-                                 BlogSearch, Login, SignUp, Logout, BlogMineList
+from BlogEconomico.views import (index, nosotros, BlogList, BlogDetail, BlogUpdate, BlogDelete, BlogCreate,
+                                 BlogSearch, Login, SignUp, Logout, BlogMineList, ProfileCreate, ProfileUpdate, MensajeList, MensajeCreate, MensajeDelete
                                  )
 
 from django.conf import settings
@@ -25,6 +25,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+    path('nosotros/', nosotros, name="nosotros"),
     path('blog/list', BlogList.as_view(), name="blog-list"),
     path('blog/detail/<pk>', BlogDetail.as_view(), name="blog-detail"),
     path('blog/update/<pk>', BlogUpdate.as_view(), name="blog-update"),
@@ -35,6 +36,11 @@ urlpatterns = [
     path('signup/', SignUp.as_view(), name="signup"),
     path('logout/', Logout.as_view(), name="logout"),
     path('blog/list/mine', BlogMineList.as_view(), name="blog-mine"),
+    path('profile/create', ProfileCreate.as_view(), name="profile-create" ),
+    path('profile/update/<pk>', ProfileUpdate.as_view(), name="profile-update" ),
+    path('mensaje/list', MensajeList.as_view(), name="mensaje-list" ),
+    path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create" ),
+    path('mensaje/delete/<pk>', MensajeDelete.as_view(), name="mensaje-delete"),
 
 ]
 

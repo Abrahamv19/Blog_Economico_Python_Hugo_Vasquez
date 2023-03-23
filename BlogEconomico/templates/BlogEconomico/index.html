@@ -51,20 +51,15 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
   
-      
+        {% for blog in blogs %}
         <div class="col-lg-4">
-          <img src="./curso_coder_house_files/puente-corrientes-resistencia.jpeg" height="144" width="144">
-          <h2>El puente</h2>
-          <p>vistas lindas del rio</p>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
+          <img src="{{blog.image_url}}" height="144" width="144">
+          <h2>{{blog.title}}</h2>
+          <p>{{blog.subtitle}}</p>
+          <p><a class="btn btn-success" href="{% url 'blog-detail' blog.id %}">Ir al Detalle »</a></p>
         </div><!-- /.col-lg-4 -->
-      
-        <div class="col-lg-4">
-          <img src="./curso_coder_house_files/cataratas-del-iguazu-misiones.jpeg" height="144" width="144">
-          <h2>Las cataratas</h2>
-          <p>un destino imperdible</p>
-          <p><a class="btn btn-secondary" href="https://getbootstrap.com/docs/5.0/examples/carousel/#">View details »</a></p>
-        </div><!-- /.col-lg-4 -->
+        {% endfor %}
+        
         
       </div><!-- /.row -->
   
@@ -73,8 +68,7 @@
   
     <!-- FOOTER -->
     <footer class="container">
-      <p class="float-end"><a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Back to top</a></p>
-      <p>© 2017–2023 Company, Inc. · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/5.0/examples/carousel/#">Terms</a></p>
+      <p>© 2023 El Independiente Company, Inc. | Blog económico y financiero.</p>
     </footer>
   </main>
   {% endblock %}

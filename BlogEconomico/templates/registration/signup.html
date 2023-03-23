@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block main %}
+<br><br>
+<h3>REGISTRA TUS DATOS DE USUARIO</h3>
+<br>
 <form method="post">
     {% csrf_token %}
     {{form.as_p}}

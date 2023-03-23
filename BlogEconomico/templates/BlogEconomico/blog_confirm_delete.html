@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block main %}
-<p style="margin-top: 10px;">Estas seguro de querer borrar esta publicación {{ blog.title }}? </p>
+<p style="margin-top: 10px;">ESTAS SEGURO DE BORRAR LA PUBLICACIÓN CON TITULO: <h3>{{ blog.title }}?</h3> <br> RECUERDA QUE NO PODRAS DESHACER ESTA ACCIÓN. </p>
 <form method="post">
     {% csrf_token %}
     {{form}}

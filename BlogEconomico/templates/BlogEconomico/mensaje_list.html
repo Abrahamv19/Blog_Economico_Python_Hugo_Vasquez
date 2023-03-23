@@ -1,0 +1,18 @@
+{% extends "BlogEconomico/base.html" %}
+{% load static %}
+
+ {% block main %}
+ <br><br>
+ <h2> MIS MENSAJES </h2>
+<ul>
+    {%  for mensaje in mensajes  %}
+    <li> Mensaje de: {{mensaje.email}} 
+        <br> 
+        {{ mensaje.mensaje }}
+        <br>
+        <br>
+        <a class="btn btn-danger" href="{% url 'mensaje-delete' mensaje.id %}">Borrar Mensaje</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

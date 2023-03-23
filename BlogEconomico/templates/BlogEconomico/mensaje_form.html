@@ -1,13 +1,13 @@
 {% extends "BlogEconomico/base.html" %}
+
 {% load static %}
 
 {% block main %}
 <br><br>
-<h2> NUEVA PUBLICACIÓN</h2>
+<h2> ENVIAR MENSAJE </h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
-    <input class="btn btn-success" type="submit" value="Actualizar">
+    <input class="btn btn-primary" type="submit" value="Enviar Mensaje">
 </form>
 {% endblock %}
-

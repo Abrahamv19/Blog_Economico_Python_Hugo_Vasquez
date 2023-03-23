@@ -3,11 +3,10 @@
 
 {% block main %}
 <br><br>
-<h2> NUEVA PUBLICACIÓN</h2>
+<h3>AVATAR</h3>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
-    <input class="btn btn-success" type="submit" value="Actualizar">
+    <input class="btn btn-success" type="submit" value="Cargar Avatar">
 </form>
 {% endblock %}
-

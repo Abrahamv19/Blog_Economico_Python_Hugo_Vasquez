@@ -1,0 +1,16 @@
+{% extends "BlogEconomico/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<br><br>
+<h3>BORRAR MENSAJE</h3>
+<p style="margin-top: 10px;">ESTAS SEGURO DE BORRAR EL MENSAJE DE: <h3>{{ mensaje.email }}?</h3> <br> RECUERDA QUE NO PODRAS DESAHACER ESTA ACCIÓN. </p>
+<form method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="Borrar">
+    <a class="btn btn-primary" href="{% url 'mensaje-list' %}">Cancelar</a>
+</form>
+    
+    
+{%endblock%}

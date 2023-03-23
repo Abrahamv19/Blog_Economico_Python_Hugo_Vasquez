@@ -1,0 +1,32 @@
+{% extends "BlogEconomico/base.html" %}
+{% load static %}
+
+{% block main %}
+<main>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          
+            
+              <div class="carousel-item active">
+                  <img src="{% static 'BlogEconomico/assets/nosotros_img.jpeg' %}">
+                <div class="container">
+                  <div class="carousel-caption text-secondary">       
+                  </div>
+                </div>
+              </div>
+            
+          
+            
+      
+             
+        </div>
+    
+      </div>
+      <div class=" col col-12" style="text-align: center;">
+      <h2>QUIENES SOMOS</h2>
+      <p>
+        Somos un Blog de noticias económicas y financieras, con periodistas y analistas expertos en los temas mas relevantes del mundo económico. La independencia es nuestra mayor virtúd y estamos comprometidos en ofrecer a nuestros lectores informacion veraz y actual.
+      </p>
+    </div>
+</main>
+{% endblock %}
