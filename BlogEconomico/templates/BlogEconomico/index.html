@@ -53,7 +53,7 @@
   
         {% for blog in blogs %}
         <div class="col-lg-4">
-          <img src="{{blog.image_url}}" height="144" width="144">
+          <img src="{{blog.image_url}}" height="72" width="144">
           <h2>{{blog.title}}</h2>
           <p>{{blog.subtitle}}</p>
           <p><a class="btn btn-success" href="{% url 'blog-detail' blog.id %}">Ir al Detalle »</a></p>
