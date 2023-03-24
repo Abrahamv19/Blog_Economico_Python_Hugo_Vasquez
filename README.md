@@ -1,10 +1,9 @@
 # proyecto_final_python_vasquez
 
 ## Proyecto Final Coder House - Python
-Comisión: 48405
-Alumno: Hugo Abraham Vasquez
-Nombre del Proyecto
-Blog Ecónomico y Financiero
+- Comisión: 48405
+- Alumno: Hugo Abraham Vasquez
+- Nombre del Proyecto: Blog Ecónomico y Financiero
 
 ### Versión
 1.0
